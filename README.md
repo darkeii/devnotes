@@ -1,2 +1,2 @@
 # devnotes
-learning languages.
+Ongoing ---> Python 
