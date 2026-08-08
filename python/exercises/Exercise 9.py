@@ -44,19 +44,13 @@ die_art = {
 
 dice = []
 total = 0
+dice_num = 0
 
 num_of_dice = int(input("How many dice?: "))
 
 for die in range(num_of_dice):
-    die_num = random.randint(1,6)
-    dice.append(die_num)
-    for row in die_art.get(die_num):
-        print(row)
-        print(end= " ")
-    print()
+    dice.append(random.randint(1,6))
+
+
 
 print(dice)
-
-for die in dice:
-    total += die
-print(f"Total: {total}")
