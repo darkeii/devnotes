@@ -48,9 +48,19 @@ dice_num = 0
 
 num_of_dice = int(input("How many dice?: "))
 
-for die in range(num_of_dice):
+for num in range(num_of_dice):
     dice.append(random.randint(1,6))
 
 
+for line in range(5):
+    for die in dice:
+        print(die_art.get(die)[line], end="   ")
+    print()
 
-print(dice)
+for die in dice:
+    total += die
+
+print()
+print("------------------------------------------------------------------")
+print(total)
+
