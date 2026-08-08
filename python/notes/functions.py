@@ -7,7 +7,7 @@ def hbd(name,age):                                #inside () terms are called pa
     print(f"You are {age} years old!")
     print("Lalalala !")
 
-hbd("darkeii", 19)                     #while calling the functions, inside () terms are called arguments
+hbd("darkeii", 19)                     #while calling the functions, inside () terms are called arguments (positional arguments)
 hbd("zenitsu", 20)                     #arguments fill the places of parameters.... (Order matters)
 
 
