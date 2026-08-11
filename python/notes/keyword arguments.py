@@ -17,5 +17,5 @@ print("1","2","3","4", sep="-")                 #here "sep" (separate) is a keyw
 def get_phone(area, first, last, country= 91):
     return print(f"{country}-{area}-{first}-{last}")
 
-get_phone("90","0504","5049")
+get_phone(first= "0504", last= "5049", area= "90")
 
