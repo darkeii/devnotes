@@ -34,7 +34,7 @@
 
 """"-----------------------------------------------------------------------"""
 
-# built-in variables are ... example: importing pi from maths module etc.
+# built-in variables are ... example: importing pi from maths module etc. (last priority)
 
 
 func1()
