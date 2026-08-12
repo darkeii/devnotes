@@ -42,11 +42,11 @@ total = 0
 for parts in pc_parts:
     if "i5" in parts:
         print("-------- CPU -----------")
-    elif "GTX 1650" in parts:
+    elif "gtx 1650" in parts:
         print("-------- GPU -----------")
     elif "8" in parts:
         print("-------- RAM -----------")
-    elif "Asus" in parts:
+    elif "asus" in parts:
         print("------ MONITOR ---------")
 
     for key, price in parts.items():
@@ -56,7 +56,7 @@ for parts in pc_parts:
     while True:
         user_input = input("> ").lower()
         if user_input in parts:
-            cart.update({key: price})
+            cart.update({user_input: parts.get(user_input)})
             break
         else:
             print("Invalid")
@@ -73,7 +73,9 @@ for key, price in cart.items():
 print()
 print(f"Your total is : ${total:,.2f}")
 
+expensive_part = [key for key, value in cart.items() if value > 50000]
 
+print(f"Your most expensive parts is/are: {expensive_part}")
 
 
 
