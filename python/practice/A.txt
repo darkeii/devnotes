@@ -1,0 +1,48 @@
+1. Custom PC Build Analyzer
+Create a program to manage a high-end PC parts list.
+
+    Use a dictionary where the keys are part names (e.g., "CPU", "GPU") and values are their prices in INR.
+
+    Write a function that calculates the total cost.
+
+    Use a list comprehension to create a new list containing only the names of parts that cost more than 50,000 INR.
+
+    Print the final filtered list and the total cost using format specifiers for two decimal places.
+
+2. Tactical Shooter Lobby Matchmaker
+Build a function named create_lobby() to simulate a matchmaking server.
+
+    Accept an arbitrary number of player usernames using *args and server configuration details (like map name and tick rate) using **kwargs.
+
+    Inside the function, use a match-case statement to check the map name and assign a specific server region.
+
+    Iterate through the players and server settings to print a formatted summary of the match lobby.
+
+3. Engineering Entrance Exam Grader
+Simulate a grading system for a multi-student exam using a 2D list.
+
+    The main list should contain sub-lists representing different students' answers.
+
+    Create a separate standard tuple containing the correct answer key.
+
+    Use nested for loops to compare each student's answers to the answer key and calculate their score.
+
+    Use a conditional expression (ternary operator) to print "Pass" if their score is above a certain threshold, or "Fail" if it is below.
+
+4. Weapon Skin Gacha Roller
+Create a program that simulates unboxing weapon cases.
+
+    Use the random.choice() module to randomly select a weapon skin tier (e.g., "Mil-Spec", "Classified") from a tuple.
+
+    Write a function that takes the rolled tier as an argument and uses match-case to apply a specific wear float value to it.
+
+    Add the final pulled item into a Set to represent your inventory, ensuring no duplicates can be stored.
+
+5. Cloud Server Control Panel
+Develop an interactive terminal to manage a dedicated cloud server.
+
+    Use a while True loop to continuously prompt the user for commands like "start", "stop", or "status" until they type a quit command.
+
+    Create a function apply_discount() that takes the server's hourly rate and uses a default argument for a student discount percentage.
+
+    Use keyword arguments when calling this function to calculate and return the final monthly hosting cost.
