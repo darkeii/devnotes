@@ -1,7 +1,6 @@
 #Hangman game
 import random
-
-words = ("apple", "orange", "banana", "coconut", "pineapple", "grapes", "berry")
+from words import basic_words
 
 # dictionary of key():
 hangman_art = {
@@ -39,36 +38,54 @@ def display_hint(hint):
     print(" ".join(hint))
 
 def display_answer(answer):
-    pass
+    print(f"Answer: {answer}")
 
 def main():
-    answer = random.choice(words)
-    hint = []
-    for x in answer:
-        hint.append("_")
+    answer = random.choice(basic_words)
+    is_playing = True
+    hint = ["_"] * len(answer)
     wrong_guesses = 0
-    guessed_letters = set()              #to make an empty set(tuple), we have to use set() method.
-    is_running = True
+    guessed_letter = set()              #created an empty set (no duplicates allowed)
 
-    while is_running:
+    while is_playing:
         display_man(wrong_guesses)
-        print()
-        print(answer)
-
+        display_hint(hint)
         guess = input(": ").lower()
 
-        if guess.isalpha():
-            for letter in guess:
-                try:
-                    index = answer.index(letter)
-                    guessed_letters.add(answer[index])
-                except ValueError:
-                    continue
 
-            print(guessed_letters)
-            display_hint(hint)
+        if guess.isalpha() and len(guess) == 1:
+            if guess in answer:
+                guessed_letter.add(guess)
+                if guess in guessed_letter:
+                    print("You already guessed this letter")
+
+                for i in range(len(answer)):
+                    if answer[i] == guess:
+                        hint[i] = guess.upper()
+
+            else:
+                wrong_guesses += 1
+
         else:
-            print("Invalid !")
+            print("Invalid")
+            continue
+
+        if "_" not in hint:
+            display_man(wrong_guesses)
+            display_hint(hint)
+            is_playing = False
+            print("You Won")
+        elif wrong_guesses == 6:
+            display_man(wrong_guesses)
+            print("You Lost")
+            print("----------------------------")
+            display_answer(answer)
+            is_playing = False
+
+
+
+
+
 
 if __name__ == '__main__':
     main()

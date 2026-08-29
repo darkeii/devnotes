@@ -50,7 +50,6 @@ def main():
                     time.sleep(0.67)
                     print(".", end= "")
 
-                spin_row()
                 row = spin_row()
                 print_row(row)
 
