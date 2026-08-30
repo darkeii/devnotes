@@ -1,4 +1,4 @@
-# super() = Function used in a chiled class to call methods from a parent class (superclass).
+# super() = Function used in a chiled class to call methods/attributes from a parent class (superclass).
 #             Allows you to extend the dunctionality of the inherited methods.
 
 class Shapes:
@@ -15,6 +15,10 @@ class Circle(Shapes):
         super().__init__(color, is_filled)
         self.radius = radius
 
+    def describe(self):                                                             # if a method of same name exists in both children calss and parent class, then children
+        print(f"This is a circle with area {3.14 * pow(self.radius, 2)}")           # class will have more priority
+        super().describe()
+
 class Square(Shapes):
     def __init__(self, color, is_filled, side):
         super().__init__(color, is_filled)
@@ -28,7 +32,7 @@ class Rectangle(Shapes):
 
 
 rectangle = Rectangle("green", True, 5, 4)
-circle = Circle("red", False, 1)
+circle = Circle("red", False, 2)
 square = Square("blue", True, 10)
 
 print(circle.color)
@@ -50,3 +54,5 @@ print(square.color)
 print(square.is_filled)
 print(square.side)
 square.describe()
+
+
