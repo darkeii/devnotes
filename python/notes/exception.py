@@ -10,8 +10,9 @@
 #       # Do some clean up
 
 
-number = int(input("Enter a number: "))
+
 try:
+    number = int(input("Enter a number: "))
     print(1 / number)
 except ZeroDivisionError:
     print("Undefined")
