@@ -17,7 +17,7 @@ file_path = "stuff/output.txt"
 # employees = ["Eugene", "Squidward", "Spongebob", "Patrick"]
 #
 # try:
-#     with open(file_path, "w") as file:
+#     with open(file_path, "w") as file:                 # "with" function opens the file and closes it after the execution of the code block inside it.
 #         for employee in employees:
 #             file.write(employee + "\n")
 #
