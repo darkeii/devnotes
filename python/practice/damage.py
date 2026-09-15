@@ -16,11 +16,12 @@ from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QPushButton, QLa
 from PyQt6.QtCore import Qt
 
 class MainWindow(QMainWindow):
-    def __init__(self):
+    def __init__(self, hp):
         super().__init__()
-        self.attack_button = QPushButton("Attack", self)
-        self.heal_button = QPushButton("Heal", self)
-        self.health = QLabel("100", self)
+        self.attack_button = QPushButton("Attack")
+        self.heal_button = QPushButton("Heal")
+        self.health = QLabel("100")
+        self.hp = hp
         self.initUI()
 
     def initUI(self):
@@ -41,28 +42,52 @@ class MainWindow(QMainWindow):
 
         #CSS
 
+        self.attack_button.setObjectName("attack")
+        self.heal_button.setObjectName("heal")
+        self.health.setObjectName("attack")
+
         self.setStyleSheet("""
             QPushButton{
                 font-size: 25px;
                 font-family: Arial;
                 padding: 30px;
-                background-color: hsl(77, 84%, 10%);
+                border: 5px solid #111111;
+                border-radius: 40px;
+            }
+
+            QPushButton#attack{
+                background-color: hsl(12, 100%, 30%);
+            }
+
+            QPushButton#attack:hover{
+                background-color: hsl(12, 100%, 40%);
+            }
+
+            QPushButton#heal{
+                background-color: hsl(109, 100%, 30%);
+            }
+
+            QPushButton#heal:hover{
+                background-color: hsl(109, 100%, 40%);
             }
 
             QLabel{
                 font-size: 25px;
+                padding: 30px
             }
             """)
 
     def attack(self):
-        pass
+        self.hp -= random.randint(0,15)
+        print(self.hp)
 
     def heal(self):
-        pass
+        self.hp += random.randint(0,15)
+        print(self.hp)
 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = MainWindow()
+    window = MainWindow(hp=100)
     window.show()
     sys.exit(app.exec())
