@@ -37,6 +37,8 @@ class MainWindow(QMainWindow):
 
         central_widget.setLayout(layout)
 
+        self.heal_button.setDisabled(True)
+
         self.attack_button.clicked.connect(self.attack)
         self.heal_button.clicked.connect(self.heal)
 
@@ -44,7 +46,7 @@ class MainWindow(QMainWindow):
 
         self.attack_button.setObjectName("attack")
         self.heal_button.setObjectName("heal")
-        self.health.setObjectName("attack")
+        self.health.setObjectName("health")
 
         self.setStyleSheet("""
             QPushButton{
@@ -78,13 +80,36 @@ class MainWindow(QMainWindow):
             """)
 
     def attack(self):
-        self.hp -= random.randint(0,15)
+        self.hp -= random.randint(0,10)
         print(self.hp)
+
+
+        if self.hp <= 0:
+            self.hp = 0
+            self.health.setText("Game Over")
+            self.attack_button.setDisabled(True)
+            self.heal_button.setDisabled(True)
+
+        elif self.hp >= 2 and self.hp <= 100:
+            self.attack_button.setDisabled(False)
+            self.heal_button.setDisabled(False)
+            self.health.setText(f"{self.hp}")
+
+        elif self.hp == 1:
+            self.health.setText("You Win ! (HP = 1)")
+            self.attack_button.setDisabled(True)
+            self.heal_button.setDisabled(True)
+
 
     def heal(self):
-        self.hp += random.randint(0,15)
+        self.hp += random.randint(0,10)
         print(self.hp)
 
+        if self.hp >= 100:
+            self.hp = 100
+            self.heal_button.setDisabled(True)
+
+        self.health.setText(f"{self.hp}")
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
