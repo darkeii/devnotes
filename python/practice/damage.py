@@ -28,20 +28,31 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(central_widget)
 
         layout = QGridLayout()
-        layout.addWidget(self.attack_button)
-        layout.addWidget(self.heal_button)
-        layout.addWidget(self.health)
+        layout.addWidget(self.attack_button, 0, 1)
+        layout.addWidget(self.heal_button, 1, 1)
+        layout.addWidget(self.health, 2, 1)
 
+        self.health.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         central_widget.setLayout(layout)
-
-
-
-
 
         self.attack_button.clicked.connect(self.attack)
         self.heal_button.clicked.connect(self.heal)
 
+        #CSS
+
+        self.setStyleSheet("""
+            QPushButton{
+                font-size: 25px;
+                font-family: Arial;
+                padding: 30px;
+                background-color: hsl(77, 84%, 10%);
+            }
+
+            QLabel{
+                font-size: 25px;
+            }
+            """)
 
     def attack(self):
         pass
