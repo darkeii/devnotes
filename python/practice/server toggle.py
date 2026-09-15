@@ -1,19 +1,18 @@
-"""
-1. The Server Toggle (Easy)
 
-OOP Concept: Instance variables (self) and Methods (Slots).
+# 1. The Server Toggle (Easy)
 
-The Task: Create a QMainWindow with a QLabel (Text: "Server: OFFLINE") and a QPushButton (Text: "Boot Server").
+# OOP Concept: Instance variables (self) and Methods (Slots).
 
-The Logic: When clicked, a method inside your class should change the label text to "Server: ONLINE" and change the button's text to "Shut Down".
-Hint: You will need a boolean instance variable like self.is_online = False to track the state.
-"""
+# The Task: Create a QMainWindow with a QLabel (Text: "Server: OFFLINE") and a QPushButton (Text: "Boot Server").
+
+# The Logic: When clicked, a method inside your class should change the label text to "Server: ONLINE" and change the button's text to "Shut Down".
+# Hint: You will need a boolean instance variable like self.is_online = False to track the state.
+
 
 import sys
 import time
 from PyQt6.QtWidgets import QApplication, QLabel, QLayout, QPushButton, QWidget, QMainWindow, QVBoxLayout
 from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QFont
 
 
 class MainWindow(QMainWindow):
