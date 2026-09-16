@@ -3,6 +3,7 @@
 import sys
 from PyQt6.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout
 from PyQt6.QtCore import QTimer, QTime, Qt
+from PyQt6.QtGui import QFont, QFontDatabase
 
 class DigitalClock(QWidget):
     def __init__(self):
@@ -24,20 +25,27 @@ class DigitalClock(QWidget):
 
         #CSS
         self.time_label.setObjectName("time_label")
+        font_id = QFontDatabase.addApplicationFont("DS-DIGIT.TTF")
+        font_family = QFontDatabase.applicationFontFamilies(font_id)
 
-        self.setStyleSheet("""
-            QWidget{
+        self.setStyleSheet(f"""
+            QWidget{{
                 background-color: black;
-            }
+            }}
 
-            QLabel#time_label{
+            QLabel#time_label{{
                 font-size: 150px;
-                font-family: Arial;
                 color: hsl(110, 100%, 67%);
-            }
+                font-family: {font_family}
+            }}
             """)
 
-        self.timer.timeout.connect(self.update_time)
+
+        my_font = QFont(font_family, 150)
+        self.time_label.setFont(my_font)
+
+        self.timer.timeout.connect(self.update_time)    #
+        self.timer.start(1000)                          # updates the clock every 1000ms = 1 sec
 
         self.update_time()
 
