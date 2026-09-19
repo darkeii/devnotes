@@ -30,7 +30,7 @@ int main() {
     char email[] = "mail@darkeii.dev";
 
     bool isOnline = true;           // true = 1, false = 0
-
+    bool isStudent = true;
 
     printf("You are %d years old\n", age);
     printf("The year is %d \n", year);
@@ -48,9 +48,16 @@ int main() {
 
     printf("Hello %s\n", name);         // we use %s for a array or character stored in a char variable.
     printf("Hello %s your favorite food is %s\n", name, food);
-    printf("mail me at %s\n", email);
+    printf("mail me at %s\n\n", email);
 
-    printf("%d", isOnline);
+    printf("%d\n\n", isOnline);
+
+    if(isStudent){
+        printf("%s is a student.\n", name);
+    }
+    else{
+        printf("%s is not a Student.\n", name);
+    }
 
     return 0;
 }
