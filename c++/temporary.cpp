@@ -1,10 +1,11 @@
 #include <iostream>
 
 int main() {
-    int first_num {10};
-    int second_num {16};
+    std::string full_name;
 
-    std::cout << first_num << " + " << second_num << " = " << first_num + second_num << std::endl;
+    std::getline(std::cin, full_name);
+
+    std::cout << full_name << std::endl;
 
     return 0;
 }
