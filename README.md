@@ -1,2 +1,3 @@
 # devnotes
-Ongoing ---> Python 
+Ongoing --> C, C++
+Completed --> python
