@@ -2,6 +2,8 @@
 
 int main(int argc, char *argv[]) {
 
+    // NUMBER SYSTEM
+
     // decimal
     int decimal = 15;
 
