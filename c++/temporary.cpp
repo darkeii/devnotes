@@ -1,11 +1,12 @@
 #include <iostream>
 
-int main() {
-    std::string full_name;
+int main(int argc, char **argv) {
 
-    std::getline(std::cin, full_name);
+    std::string name;
 
-    std::cout << full_name << std::endl;
+    std::cout << "Name : ";
+    std::getline(std::cin, name);
 
-    return 0;
+
+    std::cout << name << std::endl;
 }
