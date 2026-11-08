@@ -2,11 +2,10 @@
 
 int main(int argc, char **argv) {
 
-    std::string name;
+     unsigned usr_input{0};
+     std::cin >> usr_input;
 
-    std::cout << "Name : ";
-    std::getline(std::cin, name);
+     std::cout << usr_input << std::endl;
 
-
-    std::cout << name << std::endl;
+     return 0;
 }
