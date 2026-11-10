@@ -3,7 +3,7 @@
 int main() {
 
     bool high_traffic{false};
-    bool weather_clear{false};
+    bool weather_clear{true};
 
     std::cout << high_traffic << std::endl;
     std::cout << weather_clear << std::endl;
