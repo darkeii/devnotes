@@ -1,11 +1,14 @@
 #include <iostream>
+#include <cmath>
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv){
 
-     unsigned usr_input{0};
-     std::cin >> usr_input;
+	int num1{2};
+	int p{5};
+	auto ans{std::pow(num1, p)};
 
-     std::cout << usr_input << std::endl;
+	std::cout << ans <<std::endl;
 
-     return 0;
+
+return 0;
 }
